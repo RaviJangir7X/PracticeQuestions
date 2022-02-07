@@ -2,42 +2,43 @@ package practicequestion;
 
 public class SpiralMatrix {
     public static void main(String[] args) {
+          
           int n =7;
           int[][] matrix = new int[n][n];
           int squareLength = n;
-          int number = 1;
+          int currentNumber = 1;
 
-          for (int i = 0; i < n/2 +1; i++) {
+         for (int i = 0; i < n/2 +1; i++) {
 
-              //printing from left to right
-              for (int j = 0; j < squareLength; j++) {
-                matrix[i][i + j] = number++;
-              }
+                //printing from left to right
+                for (int j = 0; j < squareLength; j++) {
+                    matrix[i][i + j] = currentNumber++;
+                }
 
-              //printing from top to down
-              for (int j = 1; j < squareLength; j++) {
-                matrix[i + j][n - 1 - i] = number++;
-              }
+                //printing from top to down
+                for (int j = 1; j < squareLength; j++) {
+                    matrix[i + j][n - 1 - i] = currentNumber++;
+                }
 
-              //printing from right to left
-              for (int j = squareLength - 2; j >=0; j--) {
-                matrix[n - 1 - i][i + j] = number++;
-              }
+                //printing from right to left
+                for (int j = squareLength - 2; j >=0; j--) {
+                    matrix[n - 1 - i][i + j] = currentNumber++;
+                }
 
-              //printing from down to top
-              for (int j = squareLength - 2; j > 0; j--) {
-                matrix[i + j][i] = number++;
-              }
+                //printing from down to top
+                for (int j = squareLength - 2; j > 0; j--) {
+                    matrix[i + j][i] = currentNumber++;
+                }
 
-            squareLength -= 2;
-          }
-
-        for (int[] elements : matrix) {
-            for (int element  : elements) {
-                System.out.printf("%3d", element);
+                squareLength -= 2;
             }
-            System.out.println();
-        }
+
+            for (int[] elements : matrix) {
+                for (int element  : elements) {
+                    System.out.printf("%3d", element);
+                }
+                System.out.println();
+            }
     }
 }
 /*
