@@ -1,6 +1,6 @@
 package practicequestion;
 
-public class Question20_spiralMatrix {
+public class SpiralMatrix {
     public static void main(String[] args) {
           int n =7;
           int[][] matrix = new int[n][n];
