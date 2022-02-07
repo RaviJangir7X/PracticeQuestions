@@ -2,32 +2,31 @@ package practicequestion;
 
 public class SpiralMatrix {
     public static void main(String[] args) {
-          
-          int n =7;
-          int[][] matrix = new int[n][n];
-          int squareLength = n;
-          int currentNumber = 1;
+            int n =7;
+            int[][] matrix = new int[n][n];
+            int squareLength = n;
+            int currentNumber = 1;
 
-         for (int i = 0; i < n/2 +1; i++) {
+            for (int row = 0; row < n/2 +1; row++) {
 
                 //printing from left to right
-                for (int j = 0; j < squareLength; j++) {
-                    matrix[i][i + j] = currentNumber++;
+                for (int column = 0; column < squareLength; column++) {
+                    matrix[row][row + column] = currentNumber++;
                 }
 
                 //printing from top to down
                 for (int j = 1; j < squareLength; j++) {
-                    matrix[i + j][n - 1 - i] = currentNumber++;
+                    matrix[row + j][n - 1 - row] = currentNumber++;
                 }
 
                 //printing from right to left
                 for (int j = squareLength - 2; j >=0; j--) {
-                    matrix[n - 1 - i][i + j] = currentNumber++;
+                    matrix[n - 1 - row][row + j] = currentNumber++;
                 }
 
                 //printing from down to top
                 for (int j = squareLength - 2; j > 0; j--) {
-                    matrix[i + j][i] = currentNumber++;
+                    matrix[row + j][row] = currentNumber++;
                 }
 
                 squareLength -= 2;
@@ -39,7 +38,7 @@ public class SpiralMatrix {
                 }
                 System.out.println();
             }
-    }
+        }
 }
 /*
 Output :
